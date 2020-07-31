@@ -1,0 +1,16 @@
+header {
+    margin: 30px 20px;
+    text-align: left;
+}
+
+.title {
+    font-size: 250%;
+}
+
+.title > i {
+    margin-right: 15px;
+}
+
+header > h5 {
+    font-weight: normal;
+}
