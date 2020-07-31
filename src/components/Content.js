@@ -4,6 +4,7 @@ import Axios from 'axios';
 import { appendApiKey } from '../utils';
 import Category from './Category';
 import CategoryDetail from './CategoryDetail';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 const Content = () => {
@@ -30,14 +31,23 @@ const Content = () => {
 
     return (
         <section className="content">
-            <div className="category">
-                <p>Category</p>
-                <hr />
-                {
-                    categories && categories.map(category => <Category key={category.list_name_encoded} category={category} setCategoryName={setCategoryName} setUpdated={setUpdated} setListNameEncoded={setListNameEncoded} />)
-                }
-            </div>
-            <CategoryDetail categoryName={categoryName} updated={updated} listNameEncoded={listNameEncoded} />
+            <Router>
+                <Switch>
+                    <Route exact path="/">
+                        <div className="category">
+                            <p>Category</p>
+                            <hr />
+                            {
+                                categories && categories.map(category => <Category key={category.list_name_encoded} category={category} setCategoryName={setCategoryName} setUpdated={setUpdated} setListNameEncoded={setListNameEncoded} />)
+                            }
+                        </div>
+                        <CategoryDetail categoryName={categoryName} updated={updated} listNameEncoded={listNameEncoded} />
+                    </Route>
+                    <Route exact path="/about">
+                        <div>More abour the book</div>
+                    </Route>
+                </Switch>
+            </Router>
         </section>
     );
 };

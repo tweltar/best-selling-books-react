@@ -1,5 +1,6 @@
 import React from 'react';
 import './Book.css';
+import { Link } from 'react-router-dom';
 
 const Book = ({book}) => {
     return (
@@ -8,7 +9,8 @@ const Book = ({book}) => {
             <div>
                 {
                     book.weeks_on_list===1 ? <p style={{fontSize: 80+'%', margin: '5px 0'}}>New this week</p> :
-                        <p style={{fontSize: 80+'%', margin: '5px 0'}}>{book.weeks_on_list} weeks on the list</p>
+                        book.weeks_on_list===0 ? <p>&nbsp;</p> :
+                            <p style={{fontSize: 80+'%', margin: '5px 0'}}>{book.weeks_on_list} weeks on the list</p>
                 }
                 <div className="book-details">
                     <img src={book.book_image} alt="" />
@@ -19,7 +21,9 @@ const Book = ({book}) => {
                             <br />
                             <p style={{fontSize: 78+'%'}}>{book.description}</p>
                         </div>
-                        <a className="more-about-book">More about this book</a>
+                        <Link to="/about" className="more-about-book" style={{textDecoration: 'none'}}>
+                            More about this book
+                        </Link>
                     </div>
                 </div>
             </div>
