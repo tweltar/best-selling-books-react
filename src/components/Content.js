@@ -11,7 +11,7 @@ const Content = () => {
     const [categoryName, setCategoryName] = useState("Combined Print & E-Book Fiction");
     const [updated, setUpdated] = useState("Weekly");
     const [listNameEncoded, setListNameEncoded] = useState("combined-print-and-e-book-fiction");
-
+    
     const fetchAllListNames = async () => {
         const link = appendApiKey("names.json");
         
@@ -31,7 +31,7 @@ const Content = () => {
         <section className="content">
             <div className="category">
                 <p>Category</p>
-                <hr />
+                <hr />            
                 {
                     categories && categories.map(category => <Category key={category.list_name_encoded} category={category} setCategoryName={setCategoryName} setUpdated={setUpdated} setListNameEncoded={setListNameEncoded} />)
                 }
