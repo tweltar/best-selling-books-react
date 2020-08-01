@@ -2,7 +2,7 @@ import React from 'react';
 import './Book.css';
 import { Link } from 'react-router-dom';
 
-const Book = ({book}) => {
+const Book = ({book, setBook}) => {
     return (
         <div className="book">
             <h1>{book.rank}</h1>
@@ -13,7 +13,7 @@ const Book = ({book}) => {
                             <p style={{fontSize: 80+'%', margin: '5px 0'}}>{book.weeks_on_list} weeks on the list</p>
                 }
                 <div className="book-details">
-                    <img src={book.book_image} alt="" />
+                    <img src={book.book_image} alt={book.title} />
                     <div className="about-book">
                         <div>
                             <h3 style={{fontSize: 120+'%', letterSpacing: '1pt'}}>{book.title}</h3>
@@ -21,7 +21,7 @@ const Book = ({book}) => {
                             <br />
                             <p style={{fontSize: 78+'%'}}>{book.description}</p>
                         </div>
-                        <Link to="/about" className="more-about-book" style={{textDecoration: 'none'}}>
+                        <Link to="/about" onClick={() => setBook(book)} className="more-about-book" style={{textDecoration: 'none'}}>
                             More about this book
                         </Link>
                     </div>
