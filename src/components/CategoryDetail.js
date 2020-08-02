@@ -60,16 +60,16 @@ const CategoryDetail = ({ categoryName, updated, listNameEncoded }) => {
                         <div className="cat-title">
                             <div>
                                 <p>Top {num} Best Selling Books of</p>
-                                <h2>{categoryName}<span> - Updated {updated}</span></h2>
+                                <h2>{categoryName}</h2>
                                 {
-                                    publishedDate && previousPublishedDate && <p style={{fontSize: '85%', marginTop: '3px'}}>Published Date: {previousPublishedDate} - {publishedDate}</p>
+                                    publishedDate && previousPublishedDate && <p style={{fontSize: '85%', marginTop: '3px'}}>Published Date: {previousPublishedDate} - {publishedDate} <span>(Updated {updated})</span></p>
                                 }
                                 <p style={{fontSize: '80%', marginTop: '3px'}}>{
                                     publishedDateDesc==="latest" ? "Showing latest results" : "Showing results for " + searchValue
                                 }</p>
                             </div>
                             <form className="search" onSubmit={(e) => {searchByDate(e);}}>
-                                <input className="search-bar" type="date" placeholder="Search by date... yyyy-mm-dd" onChange={(e) => setSearchValue(e.target.value)} />
+                                <input className="search-bar" type="date" onChange={(e) => setSearchValue(e.target.value)} />
                                 <i className="fas fa-search search-button" onClick={(e) => searchByDate(e)}></i>
                             </form>
                         </div>

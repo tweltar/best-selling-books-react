@@ -19,7 +19,7 @@ const Book = ({book, setBook}) => {
                             <h3 style={{fontSize: 120+'%', letterSpacing: '1pt'}}>{book.title}</h3>
                             <p style={{fontSize: 87+'%'}}>by {book.author}</p>
                             <br />
-                            <p style={{fontSize: 78+'%'}}>{book.description}</p>
+                            <p style={{fontSize: 78+'%'}}><i>{book.description}</i></p>
                         </div>
                         <Link to="/about" onClick={() => setBook(book)} className="more-about-book" style={{textDecoration: 'none'}}>
                             More about this book

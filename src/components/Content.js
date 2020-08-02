@@ -31,7 +31,6 @@ const Content = () => {
         <section className="content">
             <div className="category">
                 <p>Category</p>
-                <hr />            
                 {
                     categories && categories.map(category => <Category key={category.list_name_encoded} category={category} setCategoryName={setCategoryName} setUpdated={setUpdated} setListNameEncoded={setListNameEncoded} />)
                 }

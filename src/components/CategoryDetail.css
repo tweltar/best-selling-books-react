@@ -23,7 +23,7 @@
 }
 
 span {
-    font-size: 55%;
+    font-size: 85%;
 }
 
 .search {
@@ -33,10 +33,11 @@ span {
     align-items: center;
 }
 
-.search-bar {
-    width: 120px;
+.search-bar[type=date] {
+    font-size: 80%;
+    width: 150px;
     height: fit-content;
-    padding: 5px 15px;
+    padding: 5px 10px;
     border-radius: 50px;
     outline: none;
     color: black;
@@ -55,13 +56,41 @@ span {
     color: rgb(182, 182, 182);
 }
 
-.search-button::placeholder {
-    font-size: 100%;
-    padding: 0;
-    text-align: center;
-}
-
 .books {
     display: flex;
     flex-flow: row wrap;
+}
+
+@media only screen and (max-width: 800px) {
+    .category-details {
+        padding: 0 3vw;
+    }
+
+    .cat-title {
+        padding: 20px 0;
+    }
+
+    .cat-title h2 {
+        font-size: 135%;
+    }
+
+    .search-bar[type=date] {
+        font-size: 75%;
+        width: 120px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .category-details {
+        width: 65%;
+    }
+    
+    .cat-title {
+        flex-direction: column;
+    }
+
+    .search {
+        justify-content: left;
+        margin-top: 15px;
+    }
 }

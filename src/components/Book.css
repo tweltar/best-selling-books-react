@@ -43,3 +43,41 @@
 .more-about-book:hover {
     background-color: gray;
 }
+
+@media only screen and (max-width: 1100px) {
+    .more-about-book {
+        font-size: 70%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .book {
+        width: 80%;
+        margin-left: 50px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .book {
+        width: 90%;
+        margin-left: 2vw;
+    }
+
+    .book-details {
+        flex-direction: column;
+    }
+
+    .book-details > img {
+        height: 240px;
+        width: 180px;
+    }
+    
+    .about-book h3 {
+        margin-top: 10px;
+    }
+    
+    .more-about-book {
+        margin-top: 10px;
+    }
+    
+}
